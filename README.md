@@ -1,4 +1,4 @@
 IndetectablesRAT
 ================
 
-Remote Administration Tool
+Advanced Remote Administration Tool, multiserver

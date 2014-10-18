@@ -5,6 +5,7 @@
 
 int main()
 {
+    printf("%s", SERVER_INSTALL_PATH);
     printf("# Starting server\n");
     printf("# Installing server\n");
     InstallServer();

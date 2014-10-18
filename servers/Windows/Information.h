@@ -11,7 +11,7 @@
 struct COMPUTER
 {
     char NAME, RAM;
-    char ARCHITECURE[3]; //x86 or x64
+    char ARCHITECTURE[3]; //x86 or x64
 } info_comp;
 
 struct OS

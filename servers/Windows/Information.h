@@ -5,7 +5,7 @@
 #define CONNECTION_PASSWORD "Indetectables.NET"
 #define SERVER_MUTEX "{1234-1234}"
 #define SERVER_GROUP "Default"
-#define SERVER_INSTALL
+#define SERVER_VERSION "1.0.0"
 #define SERVER_INSTALL_NAME "Indetectables.exe"
 #define SERVER_INSTALL_PATH getenv("APPDATA")
 #define SERVER_INSTALL_OVERRIDE FALSE

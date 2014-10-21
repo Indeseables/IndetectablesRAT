@@ -58,36 +58,67 @@ int connectToPyServ(char *ipToConn, int port){
     }else{
         printf("Connected!, are you ready?? :D\n");//remember all outputs will be removed in a near future
     }
+
+    senderToServ(socketConn);
 }
 
 /** this method is not ready yet, its only a test
 about how to send data "via" sockets **/
 
-/**
-int senderToServ(){
+
+int senderToServ(SOCKET socketConn){
     //no params by the moment, we have to think about...
     int counter = 0;
     char Buffer[100];
-
-    while(1){//While true... :P
+    int breaker = 0;
+    while(breaker != 0){//While true... :P
         wsprintf(Buffer, "Test msg");
         if((send(socketConn, Buffer, sizeof(Buffer), 0)) == SOCKET_ERROR){
             errorMsg(1, "Error sending data");
         }else{
             printf("sent correctly");
         }
+
+        recvData(socketConn, Buffer, counter);
     }
 }
-**/
 
-/**
-int recvData(){
+//method to receive data
+int recvData(SOCKET socketConn, char Buffer[100], int counter, int breaker){
+    int closeIndicator = recv(socketConn, Buffer, sizeof(Buffer), 0);
 
+    printf("Sent data: %s\n");
+    if(closeIndicator == SOCKET_ERROR){
+        errorMsg(1, "Error receiveing data...");
+    }else{
+        printf("Data received correctly!");
+    }
+
+    closeConnection(socketConn, closeIndicator, counter, breaker);
 }
-**/
+
+int closeConnection(SOCKET socketConn, int closeIndicator, int counter, int breaker){
+    int max = -1;
+
+    if(closeIndicator == 0){
+        printf("Closing connection...");
+        closesocket(socketConn);
+        WSACleanup();
+        return -1;
+    }
+
+    printf("bytes received from server: %d", closeIndicator);
+    if(!0){
+        printf("Turned off");
+        breaker = 1;
+    }else{
+        if((counter >= max) && (max>0))
+            breaker = 1;
+    }
+}
 
 int main(){
     init_WSA();
-    //connectToPyServ(ip, port);
+    connectToPyServ("127.0.0.1", 5555);
     return 0;
 }
